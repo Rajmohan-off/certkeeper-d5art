@@ -1,0 +1,1185 @@
+[
+    {
+      "value": "+93",
+      "label": "Afghanistan",
+      "country_flag": "🇦🇫"
+    },
+    {
+      "value": "+355",
+      "label": "Albania",
+      "country_flag": "🇦🇱"
+    },
+    {
+      "value": "+213",
+      "label": "Algeria",
+      "country_flag": "🇩🇿"
+    },
+    {
+      "value": "+376",
+      "label": "Andorra",
+      "country_flag": "🇦🇩"
+    },
+    {
+      "value": "+244",
+      "label": "Angola",
+      "country_flag": "🇦🇴"
+    },
+    {
+      "value": "+1-268",
+      "label": "Antigua and Barbuda",
+      "country_flag": "🇦🇬"
+    },
+    {
+      "value": "+54",
+      "label": "Argentina",
+      "country_flag": "🇦🇷"
+    },
+    {
+      "value": "+374",
+      "label": "Armenia",
+      "country_flag": "🇦🇲"
+    },
+    {
+      "value": "+297",
+      "label": "Aruba",
+      "country_flag": "🇦🇼"
+    },
+    {
+      "value": "+61",
+      "label": "Australia",
+      "country_flag": "🇦🇺"
+    },
+    {
+      "value": "+43",
+      "label": "Austria",
+      "country_flag": "🇦🇹"
+    },
+    {
+      "value": "+994",
+      "label": "Azerbaijan",
+      "country_flag": "🇦🇿"
+    },
+    {
+      "value": "+1-242",
+      "label": "Bahamas",
+      "country_flag": "🇧🇸"
+    },
+    {
+      "value": "+973",
+      "label": "Bahrain",
+      "country_flag": "🇧🇭"
+    },
+    {
+      "value": "+880",
+      "label": "Bangladesh",
+      "country_flag": "🇧🇩"
+    },
+    {
+      "value": "+1-246",
+      "label": "Barbados",
+      "country_flag": "🇧🇧"
+    },
+    {
+      "value": "+375",
+      "label": "Belarus",
+      "country_flag": "🇧🇾"
+    },
+    {
+      "value": "+32",
+      "label": "Belgium",
+      "country_flag": "🇧🇪"
+    },
+    {
+      "value": "+501",
+      "label": "Belize",
+      "country_flag": "🇧🇿"
+    },
+    {
+      "value": "+229",
+      "label": "Benin",
+      "country_flag": "🇧🇯"
+    },
+    {
+      "value": "+1-441",
+      "label": "Bermuda",
+      "country_flag": "🇧🇲"
+    },
+    {
+      "value": "+975",
+      "label": "Bhutan",
+      "country_flag": "🇧🇹"
+    },
+    {
+      "value": "+591",
+      "label": "Bolivia",
+      "country_flag": "🇧🇴"
+    },
+    {
+      "value": "+387",
+      "label": "Bosnia and Herzegovina",
+      "country_flag": "🇧🇦"
+    },
+    {
+      "value": "+267",
+      "label": "Botswana",
+      "country_flag": "🇧🇼"
+    },
+    {
+      "value": "+55",
+      "label": "Brazil",
+      "country_flag": "🇧🇷"
+    },
+    {
+      "value": "+673",
+      "label": "Brunei Darussalam",
+      "country_flag": "🇧🇳"
+    },
+    {
+      "value": "+359",
+      "label": "Bulgaria",
+      "country_flag": "🇧🇬"
+    },
+    {
+      "value": "+226",
+      "label": "Burkina Faso",
+      "country_flag": "🇧🇫"
+    },
+    {
+      "value": "+257",
+      "label": "Burundi",
+      "country_flag": "🇧🇮"
+    },
+    {
+      "value": "+855",
+      "label": "Cambodia",
+      "country_flag": "🇰🇭"
+    },
+    {
+      "value": "+237",
+      "label": "Cameroon",
+      "country_flag": "🇨🇲"
+    },
+    {
+      "value": "+1",
+      "label": "Canada",
+      "country_flag": "🇨🇦"
+    },
+    {
+      "value": "+238",
+      "label": "Cape Verde",
+      "country_flag": "🇨🇻"
+    },
+    {
+      "value": "+1-345",
+      "label": "Cayman Islands",
+      "country_flag": "🇰🇾"
+    },
+    {
+      "value": "+236",
+      "label": "Central African Republic",
+      "country_flag": "🇨🇫"
+    },
+    {
+      "value": "+235",
+      "label": "Chad",
+      "country_flag": "🇹🇩"
+    },
+    {
+      "value": "+56",
+      "label": "Chile",
+      "country_flag": "🇨🇱"
+    },
+    {
+      "value": "+86",
+      "label": "China",
+      "country_flag": "🇨🇳"
+    },
+    {
+      "value": "+61",
+      "label": "Christmas Island",
+      "country_flag": "🇨🇽"
+    },
+    {
+      "value": "+61",
+      "label": "Cocos (Keeling) Islands",
+      "country_flag": "🇨🇨"
+    },
+    {
+      "value": "+57",
+      "label": "Colombia",
+      "country_flag": "🇨🇴"
+    },
+    {
+      "value": "+269",
+      "label": "Comoros",
+      "country_flag": "🇰🇲"
+    },
+    {
+      "value": "+269",
+      "label": "Comoros",
+      "country_flag": "🇰🇲"
+    },
+    {
+      "value": "+243",
+      "label": "Congo, Democratic Republic of the",
+      "country_flag": "🇨🇩"
+    },
+    {
+      "value": "+242",
+      "label": "Congo, Republic of the",
+      "country_flag": "🇨🇬"
+    },
+    {
+      "value": "+682",
+      "label": "Cook Islands",
+      "country_flag": "🇨🇰"
+    },
+    {
+      "value": "+506",
+      "label": "Costa Rica",
+      "country_flag": "🇨🇷"
+    },
+    {
+      "value": "+225",
+      "label": "Cote d'Ivoire",
+      "country_flag": "🇨🇮"
+    },
+    {
+      "value": "+385",
+      "label": "Croatia",
+      "country_flag": "🇭🇷"
+    },
+    {
+      "value": "+53",
+      "label": "Cuba",
+      "country_flag": "🇨🇺"
+    },
+    {
+      "value": "+599",
+      "label": "Curacao",
+      "country_flag": "🇨🇼"
+    },
+    {
+      "value": "+357",
+      "label": "Cyprus",
+      "country_flag": "🇨🇾"
+    },
+    {
+      "value": "+420",
+      "label": "Czech Republic",
+      "country_flag": "🇨🇿"
+    },
+    {
+      "value": "+45",
+      "label": "Denmark",
+      "country_flag": "🇩🇰"
+    },
+    {
+      "value": "+253",
+      "label": "Djibouti",
+      "country_flag": "🇩🇯"
+    },
+    {
+      "value": "+1-767",
+      "label": "Dominica",
+      "country_flag": "🇩🇲"
+    },
+    {
+      "value": "+1-809",
+      "label": "Dominican Republic",
+      "country_flag": "🇩🇴"
+    },
+    {
+      "value": "+593",
+      "label": "Ecuador",
+      "country_flag": "🇪🇨"
+    },
+    {
+      "value": "+20",
+      "label": "Egypt",
+      "country_flag": "🇪🇬"
+    },
+    {
+      "value": "+503",
+      "label": "El Salvador",
+      "country_flag": "🇸🇻"
+    },
+    {
+      "value": "+240",
+      "label": "Equatorial Guinea",
+      "country_flag": "🇬🇶"
+    },
+    {
+      "value": "+291",
+      "label": "Eritrea",
+      "country_flag": "🇪🇷"
+    },
+    {
+      "value": "+372",
+      "label": "Estonia",
+      "country_flag": "🇪🇪"
+    },
+    {
+      "value": "+251",
+      "label": "Ethiopia",
+      "country_flag": "🇪🇹"
+    },
+    {
+      "value": "+500",
+      "label": "Falkland Islands (Malvinas)",
+      "country_flag": "🇫🇰"
+    },
+    {
+      "value": "+298",
+      "label": "Faroe Islands",
+      "country_flag": "🇫🇴"
+    },
+    {
+      "value": "+679",
+      "label": "Fiji",
+      "country_flag": "🇫🇯"
+    },
+    {
+      "value": "+358",
+      "label": "Finland",
+      "country_flag": "🇫🇮"
+    },
+    {
+      "value": "+33",
+      "label": "France",
+      "country_flag": "🇫🇷"
+    },
+    {
+      "value": "+594",
+      "label": "French Guiana",
+      "country_flag": "🇬🇫"
+    },
+    {
+      "value": "+689",
+      "label": "French Polynesia",
+      "country_flag": "🇵🇫"
+    },
+    {
+      "value": "+241",
+      "label": "Gabon",
+      "country_flag": "🇬🇦"
+    },
+    {
+      "value": "+220",
+      "label": "Gambia",
+      "country_flag": "🇬🇲"
+    },
+    {
+      "value": "+995",
+      "label": "Georgia",
+      "country_flag": "🇬🇪"
+    },
+    {
+      "value": "+49",
+      "label": "Germany",
+      "country_flag": "🇩🇪"
+    },
+    {
+      "value": "+233",
+      "label": "Ghana",
+      "country_flag": "🇬🇭"
+    },
+    {
+      "value": "+350",
+      "label": "Gibraltar",
+      "country_flag": "🇬🇮"
+    },
+    {
+      "value": "+30",
+      "label": "Greece",
+      "country_flag": "🇬🇷"
+    },
+    {
+      "value": "+299",
+      "label": "Greenland",
+      "country_flag": "🇬🇱"
+    },
+    {
+      "value": "+1-473",
+      "label": "Grenada",
+      "country_flag": "🇬🇩"
+    },
+    {
+      "value": "+590",
+      "label": "Guadeloupe",
+      "country_flag": "🇬🇵"
+    },
+    {
+      "value": "+1-671",
+      "label": "Guam",
+      "country_flag": "🇬🇺"
+    },
+    {
+      "value": "+502",
+      "label": "Guatemala",
+      "country_flag": "🇬🇹"
+    },
+    {
+      "value": "+224",
+      "label": "Guinea",
+      "country_flag": "🇬🇳"
+    },
+    {
+      "value": "+245",
+      "label": "Guinea-Bissau",
+      "country_flag": "🇬🇼"
+    },
+    {
+      "value": "+592",
+      "label": "Guyana",
+      "country_flag": "🇬🇾"
+    },
+    {
+        "value": "+509",
+        "label": "Haiti",
+        "country_flag": "🇭🇹"
+      },
+      {
+        "value": "+504",
+        "label": "Honduras",
+        "country_flag": "🇭🇳"
+      },
+      {
+        "value": "+852",
+        "label": "Hong Kong",
+        "country_flag": "🇭🇰"
+      },
+      {
+        "value": "+36",
+        "label": "Hungary",
+        "country_flag": "🇭🇺"
+      },
+      {
+        "value": "+354",
+        "label": "Iceland",
+        "country_flag": "🇮🇸"
+      },
+      {
+        "value": "+91",
+        "label": "India",
+        "country_flag": "🇮🇳"
+      },
+      {
+        "value": "+62",
+        "label": "Indonesia",
+        "country_flag": "🇮🇩"
+      },
+      {
+        "value": "+98",
+        "label": "Iran",
+        "country_flag": "🇮🇷"
+      },
+      {
+        "value": "+964",
+        "label": "Iraq",
+        "country_flag": "🇮🇶"
+      },
+      {
+        "value": "+353",
+        "label": "Ireland",
+        "country_flag": "🇮🇪"
+      },
+      {
+        "value": "+972",
+        "label": "Israel",
+        "country_flag": "🇮🇱"
+      },
+      {
+        "value": "+39",
+        "label": "Italy",
+        "country_flag": "🇮🇹"
+      },
+      {
+        "value": "+1-876",
+        "label": "Jamaica",
+        "country_flag": "🇯🇲"
+      },
+      {
+        "value": "+81",
+        "label": "Japan",
+        "country_flag": "🇯🇵"
+      },
+      {
+        "value": "+962",
+        "label": "Jordan",
+        "country_flag": "🇯🇴"
+      },
+      {
+        "value": "+7",
+        "label": "Kazakhstan",
+        "country_flag": "🇰🇿"
+      },
+      {
+        "value": "+254",
+        "label": "Kenya",
+        "country_flag": "🇰🇪"
+      },
+      {
+        "value": "+686",
+        "label": "Kiribati",
+        "country_flag": "🇰🇮"
+      },
+      {
+        "value": "+965",
+        "label": "Kuwait",
+        "country_flag": "🇰🇼"
+      },
+      {
+        "value": "+996",
+        "label": "Kyrgyzstan",
+        "country_flag": "🇰🇬"
+      },
+      {
+        "value": "+856",
+        "label": "Laos",
+        "country_flag": "🇱🇦"
+      },
+      {
+        "value": "+371",
+        "label": "Latvia",
+        "country_flag": "🇱🇻"
+      },
+      {
+        "value": "+961",
+        "label": "Lebanon",
+        "country_flag": "🇱🇧"
+      },
+      {
+        "value": "+266",
+        "label": "Lesotho",
+        "country_flag": "🇱🇸"
+      },
+      {
+        "value": "+231",
+        "label": "Liberia",
+        "country_flag": "🇱🇷"
+      },
+      {
+        "value": "+218",
+        "label": "Libya",
+        "country_flag": "🇱🇾"
+      },
+      {
+        "value": "+423",
+        "label": "Liechtenstein",
+        "country_flag": "🇱🇮"
+      },
+      {
+        "value": "+370",
+        "label": "Lithuania",
+        "country_flag": "🇱🇹"
+      },
+      {
+        "value": "+352",
+        "label": "Luxembourg",
+        "country_flag": "🇱🇺"
+      },
+      {
+        "value": "+853",
+        "label": "Macao",
+        "country_flag": "🇲🇴"
+      },
+      {
+        "value": "+389",
+        "label": "Macedonia",
+        "country_flag": "🇲🇰"
+      },
+      {
+        "value": "+261",
+        "label": "Madagascar",
+        "country_flag": "🇲🇬"
+      },
+      {
+        "value": "+265",
+        "label": "Malawi",
+        "country_flag": "🇲🇼"
+      },
+      {
+        "value": "+60",
+        "label": "Malaysia",
+        "country_flag": "🇲🇾"
+      },
+      {
+        "value": "+960",
+        "label": "Maldives",
+        "country_flag": "🇲🇻"
+      },
+      {
+        "value": "+223",
+        "label": "Mali",
+        "country_flag": "🇲🇱"
+      },
+      {
+        "value": "+356",
+        "label": "Malta",
+        "country_flag": "🇲🇹"
+      },
+      {
+        "value": "+692",
+        "label": "Marshall Islands",
+        "country_flag": "🇲🇭"
+      },
+      {
+        "value": "+596",
+        "label": "Martinique",
+        "country_flag": "🇲🇶"
+      },
+      {
+        "value": "+222",
+        "label": "Mauritania",
+        "country_flag": "🇲🇷"
+      },
+      {
+        "value": "+230",
+        "label": "Mauritius",
+        "country_flag": "🇲🇺"
+      },
+      {
+        "value": "+262",
+        "label": "Mayotte",
+        "country_flag": "🇾🇹"
+      },
+      {
+        "value": "+52",
+        "label": "Mexico",
+        "country_flag": "🇲🇽"
+      },
+      {
+        "value": "+691",
+        "label": "Micronesia",
+        "country_flag": "🇫🇲"
+      },
+      {
+        "value": "+373",
+        "label": "Moldova",
+        "country_flag": "🇲🇩"
+    },
+    {
+      "value": "+377",
+      "label": "Monaco",
+      "country_flag": "🇲🇨"
+    },
+    {
+      "value": "+976",
+      "label": "Mongolia",
+      "country_flag": "🇲🇳"
+    },
+    {
+      "value": "+382",
+      "label": "Montenegro",
+      "country_flag": "🇲🇪"
+    },
+    {
+      "value": "+1-664",
+      "label": "Montserrat",
+      "country_flag": "🇲🇸"
+    },
+    {
+      "value": "+212",
+      "label": "Morocco",
+      "country_flag": "🇲🇦"
+    },
+    {
+      "value": "+258",
+      "label": "Mozambique",
+      "country_flag": "🇲🇿"
+    },
+    {
+      "value": "+95",
+      "label": "Myanmar",
+      "country_flag": "🇲🇲"
+    },
+    {
+      "value": "+264",
+      "label": "Namibia",
+      "country_flag": "🇳🇦"
+    },
+    {
+      "value": "+674",
+      "label": "Nauru",
+      "country_flag": "🇳🇷"
+    },
+    {
+      "value": "+977",
+      "label": "Nepal",
+      "country_flag": "🇳🇵"
+    },
+    {
+      "value": "+31",
+      "label": "Netherlands",
+      "country_flag": "🇳🇱"
+    },
+    {
+      "value": "+599",
+      "label": "Netherlands Antilles",
+      "country_flag": "🇳🇱"
+    },
+    {
+      "value": "+687",
+      "label": "New Caledonia",
+      "country_flag": "🇳🇨"
+    },
+    {
+      "value": "+64",
+      "label": "New Zealand",
+      "country_flag": "🇳🇿"
+    },
+    {
+      "value": "+505",
+      "label": "Nicaragua",
+      "country_flag": "🇳🇮"
+    },
+    {
+      "value": "+227",
+      "label": "Niger",
+      "country_flag": "🇳🇪"
+    },
+    {
+      "value": "+234",
+      "label": "Nigeria",
+      "country_flag": "🇳🇬"
+    },
+    {
+      "value": "+683",
+      "label": "Niue",
+      "country_flag": "🇳🇺"
+    },
+    {
+      "value": "+672",
+      "label": "Norfolk Island",
+      "country_flag": "🇳🇫"
+    },
+    {
+      "value": "+850",
+      "label": "North Korea",
+      "country_flag": "🇰🇵"
+    },
+    {
+      "value": "+1-670",
+      "label": "Northern Mariana Islands",
+      "country_flag": "🇲🇵"
+    },
+    {
+      "value": "+47",
+      "label": "Norway",
+      "country_flag": "🇳🇴"
+    },
+    {
+      "value": "+968",
+      "label": "Oman",
+      "country_flag": "🇴🇲"
+    },
+    {
+      "value": "+92",
+      "label": "Pakistan",
+      "country_flag": "🇵🇰"
+    },
+    {
+      "value": "+680",
+      "label": "Palau",
+      "country_flag": "🇵🇼"
+    },
+    {
+      "value": "+970",
+      "label": "Palestine",
+      "country_flag": "🇵🇸"
+    },
+    {
+      "value": "+507",
+      "label": "Panama",
+      "country_flag": "🇵🇦"
+    },
+    {
+      "value": "+675",
+      "label": "Papua New Guinea",
+      "country_flag": "🇵🇬"
+    },
+    {
+      "value": "+595",
+      "label": "Paraguay",
+      "country_flag": "🇵🇾"
+    },
+    {
+      "value": "+51",
+      "label": "Peru",
+      "country_flag": "🇵🇪"
+    },
+    {
+      "value": "+63",
+      "label": "Philippines",
+      "country_flag": "🇵🇭"
+    },
+    {
+      "value": "+64",
+      "label": "Pitcairn",
+      "country_flag": "🇵🇳"
+    },
+    {
+      "value": "+48",
+      "label": "Poland",
+      "country_flag": "🇵🇱"
+    },
+    {
+      "value": "+351",
+      "label": "Portugal",
+      "country_flag": "🇵🇹"
+    },
+    {
+      "value": "+1-787",
+      "label": "Puerto Rico",
+      "country_flag": "🇵🇷"
+    },
+    {
+      "value": "+974",
+      "label": "Qatar",
+      "country_flag": "🇶🇦"
+    },
+    {
+      "value": "+82",
+      "label": "Republic of Korea",
+      "country_flag": "🇰🇷"
+    },
+    {
+      "value": "+373",
+      "label": "Republic of Moldova",
+      "country_flag": "🇲🇩"
+    },
+    {
+      "value": "+40",
+      "label": "Romania",
+      "country_flag": "🇷🇴"
+    },
+    {
+      "value": "+7",
+      "label": "Russia",
+      "country_flag": "🇷🇺"
+    },
+    {
+      "value": "+250",
+      "label": "Rwanda",
+      "country_flag": "🇷🇼"
+    },
+    {
+      "value": "+262",
+      "label": "Réunion",
+      "country_flag": "🇾🇹"
+    },
+    {
+      "value": "+590",
+      "label": "Saint Barthélemy",
+      "country_flag": "🇧🇱"
+    },
+    {
+      "value": "+290",
+      "label": "Saint Helena",
+      "country_flag": "🇸🇭"
+    },
+    {
+        "value": "+1-869",
+        "label": "Saint Kitts and Nevis",
+        "country_flag": "🇰🇳"
+      },
+      {
+        "value": "+1-758",
+        "label": "Saint Lucia",
+        "country_flag": "🇱🇨"
+      },
+      {
+        "value": "+590",
+        "label": "Saint Martin (French part)",
+        "country_flag": "🇲🇫"
+      },
+      {
+        "value": "+508",
+        "label": "Saint Pierre and Miquelon",
+        "country_flag": "🇵🇲"
+      },
+      {
+        "value": "+1-784",
+        "label": "Saint Vincent and the Grenadines",
+        "country_flag": "🇻🇨"
+      },
+      {
+        "value": "+685",
+        "label": "Samoa",
+        "country_flag": "🇼🇸"
+      },
+      {
+        "value": "+378",
+        "label": "San Marino",
+        "country_flag": "🇸🇲"
+      },
+      {
+        "value": "+239",
+        "label": "Sao Tome and Principe",
+        "country_flag": "🇸🇹"
+      },
+      {
+        "value": "+966",
+        "label": "Saudi Arabia",
+        "country_flag": "🇸🇦"
+      },
+      {
+        "value": "+221",
+        "label": "Senegal",
+        "country_flag": "🇸🇳"
+      },
+      {
+        "value": "+381",
+        "label": "Serbia",
+        "country_flag": "🇷🇸"
+      },
+      {
+        "value": "+248",
+        "label": "Seychelles",
+        "country_flag": "🇸🇨"
+      },
+      {
+        "value": "+232",
+        "label": "Sierra Leone",
+        "country_flag": "🇸🇱"
+      },
+      {
+        "value": "+65",
+        "label": "Singapore",
+        "country_flag": "🇸🇬"
+      },
+      {
+        "value": "+1-721",
+        "label": "Sint Maarten (Dutch part)",
+        "country_flag": "🇸🇽"
+      },
+      {
+        "value": "+421",
+        "label": "Slovakia",
+        "country_flag": "🇸🇰"
+      },
+      {
+        "value": "+386",
+        "label": "Slovenia",
+        "country_flag": "🇸🇮"
+      },
+      {
+        "value": "+677",
+        "label": "Solomon Islands",
+        "country_flag": "🇸🇧"
+      },
+      {
+        "value": "+252",
+        "label": "Somalia",
+        "country_flag": "🇸🇴"
+      },
+      {
+        "value": "+27",
+        "label": "South Africa",
+        "country_flag": "🇿🇦"
+      },
+      {
+        "value": "+82",
+        "label": "South Korea",
+        "country_flag": "🇰🇷"
+      },
+      {
+        "value": "+211",
+        "label": "South Sudan",
+        "country_flag": "🇸🇸"
+      },
+      {
+        "value": "+34",
+        "label": "Spain",
+        "country_flag": "🇪🇸"
+      },
+      {
+        "value": "+94",
+        "label": "Sri Lanka",
+        "country_flag": "🇱🇰"
+      },
+      {
+        "value": "+249",
+        "label": "Sudan",
+        "country_flag": "🇸🇩"
+      },
+      {
+        "value": "+597",
+        "label": "Suriname",
+        "country_flag": "🇸🇷"
+      },
+      {
+        "value": "+47",
+        "label": "Svalbard and Jan Mayen",
+        "country_flag": "🇸🇯"
+      },
+      {
+        "value": "+268",
+        "label": "Swaziland",
+        "country_flag": "🇸🇿"
+      },
+      {
+        "value": "+46",
+        "label": "Sweden",
+        "country_flag": "🇸🇪"
+      },
+      {
+        "value": "+41",
+        "label": "Switzerland",
+        "country_flag": "🇨🇭"
+      },
+      {
+        "value": "+963",
+        "label": "Syria",
+        "country_flag": "🇸🇾"
+      },
+      {
+        "value": "+886",
+        "label": "Taiwan",
+        "country_flag": "🇹🇼"
+      },
+      {
+        "value": "+992",
+        "label": "Tajikistan",
+        "country_flag": "🇹🇯"
+      },
+      {
+        "value": "+255",
+        "label": "Tanzania",
+        "country_flag": "🇹🇿"
+      },
+      {
+        "value": "+66",
+        "label": "Thailand",
+        "country_flag": "🇹🇭"
+      },
+      {
+        "value": "+670",
+        "label": "Timor-Leste",
+        "country_flag": "🇹🇱"
+      },
+      {
+        "value": "+228",
+        "label": "Togo",
+        "country_flag": "🇹🇬"
+      },
+      {
+        "value": "+690",
+        "label": "Tokelau",
+        "country_flag": "🇹🇰"
+      },
+      {
+        "value": "+676",
+        "label": "Tonga",
+        "country_flag": "🇹🇴"
+      },
+      {
+        "value": "+1-868",
+        "label": "Trinidad and Tobago",
+        "country_flag": "🇹🇹"
+      },
+      {
+        "value": "+216",
+        "label": "Tunisia",
+        "country_flag": "🇹🇳"
+      },
+      {
+        "value": "+90",
+        "label": "Turkey",
+        "country_flag": "🇹🇷"
+      },
+      {
+        "value": "+993",
+        "label": "Turkmenistan",
+        "country_flag": "🇹🇲"
+      },
+      {
+        "value": "+1-649",
+        "label": "Turks and Caicos Islands",
+        "country_flag": "🇹🇨"
+      },
+      {
+        "value": "+688",
+        "label": "Tuvalu",
+        "country_flag": "🇹🇻"
+      },
+      {
+        "value": "+256",
+        "label": "Uganda",
+        "country_flag": "🇺🇬"
+      },
+      {
+        "value": "+380",
+        "label": "Ukraine",
+        "country_flag": "🇺🇦"
+      },
+      {
+        "value": "+971",
+        "label": "United Arab Emirates",
+        "country_flag": "🇦🇪"
+      },
+      {
+        "value": "+44",
+        "label": "United Kingdom",
+        "country_flag": "🇬🇧"
+      },
+      {
+        "value": "+1",
+        "label": "United States",
+        "country_flag": "🇺🇸"
+      },
+      {
+        "value": "+598",
+        "label": "Uruguay",
+        "country_flag": "🇺🇾"
+      },
+      {
+        "value": "+998",
+        "label": "Uzbekistan",
+        "country_flag": "🇺🇿"
+      },
+      {
+        "value": "+678",
+        "label": "Vanuatu",
+        "country_flag": "🇻🇺"
+      },
+      {
+        "value": "+58",
+        "label": "Venezuela",
+        "country_flag": "🇻🇪"
+      },
+      {
+        "value": "+84",
+        "label": "Vietnam",
+        "country_flag": "🇻🇳"
+      },
+      {
+        "value": "+1-808",
+        "label": "Virgin Islands, U.S.",
+        "country_flag": "🇻🇮"
+      },
+      {
+        "value": "+681",
+        "label": "Wallis and Futuna",
+        "country_flag": "🇼🇫"
+      },
+      {
+        "value": "+967",
+        "label": "Yemen",
+        "country_flag": "🇾🇪"
+      },
+      {
+        "value": "+260",
+        "label": "Zambia",
+        "country_flag": "🇿🇲"
+      },
+      {
+        "value": "+263",
+        "label": "Zimbabwe",
+        "country_flag": "🇿🇼"
+      }
+    ]
+    
+    
+  
