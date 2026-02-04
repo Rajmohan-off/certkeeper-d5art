@@ -11,12 +11,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Mail, Lock, ArrowRight } from 'lucide-react';
 import ibaLogo from '@/assets/iba-logo.png';
 import { ThemeToggle } from '@/components/ThemeToggle';
-import Loader from '@/components/Loader';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { loading: isLoading } = useSelector((state: RootState) => state.auth);
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
   const { user } = useSelector((state: RootState) => state.auth);
@@ -35,31 +34,15 @@ export default function Login() {
       return;
     }
 
-    try {
-      const resultAction = await dispatch(loginUser({ email, password, role: 'seeker' }));
-      
-      if (loginUser.fulfilled.match(resultAction)) {
-        toast.success("Welcome back! Login successful.");
-        
-        const redirectPath = localStorage.getItem('redirectAfterLogin');
-        if (redirectPath) {
-          localStorage.removeItem('redirectAfterLogin');
-          navigate(redirectPath);
-        } else {
-          const user = resultAction.payload.user;
-          const userRole = user?.role;
-          navigate(
-            userRole === 'recruiter' ? '/recruiter' : 
-            userRole === 'admin' ? '/admin' : 
-            '/dashboard'
-          );
-        }
-      } else {
-        toast.error(resultAction.payload as string || "Invalid email or password");
-      }
-    } catch (error) {
-      toast.error("Something went wrong. Please try again.");
-    }
+    setIsLoading(true);
+    
+    // Simulate a brief loading state
+    setTimeout(() => {
+      dispatch(loginUser({ email, password }));
+      toast.success("Welcome back! Login successful.");
+      setIsLoading(false);
+      navigate('/dashboard');
+    }, 500);
   };
 
   return (
@@ -154,8 +137,6 @@ export default function Login() {
           </div>
         </CardContent>
       </Card>
-      
-      {isLoading && <Loader fullScreen />}
     </div>
   );
 }

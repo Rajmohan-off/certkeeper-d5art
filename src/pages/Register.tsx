@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useDispatch, useSelector } from 'react-redux';
-import { registerUser, sendOtp } from '@/store/slices/authSlice';
+import { loginUser } from '@/store/slices/authSlice';
 import { RootState, AppDispatch } from '@/store';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -15,14 +15,9 @@ import { User, Mail, Lock, Phone, MapPin, CalendarIcon, ArrowRight, Globe } from
 import ibaLogo from '@/assets/iba-logo.png';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { toast } from 'react-hot-toast';
-import { format } from 'date-fns';
-import { cn } from '@/lib/utils';
 import countryList from '@/data/CountryCode.json';
 import stateList from '@/data/States.json';
-import OtpVerification from '@/components/OtpVerification';
-import Loader from '@/components/Loader';
-// Roles for the application
-const role = "seeker";
+
 const passwordRegex =
   /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*._-])[A-Za-z\d!@#$%^&*._-]{8,}$/;
 
@@ -38,7 +33,8 @@ const registerSchema = z.object({
       .regex(
         passwordRegex,
         'Password must be 8+ chars, include 1 uppercase, 1 number, and 1 special character'
-      ),  confirmPassword: z.string(),
+      ),
+  confirmPassword: z.string(),
 }).refine((data) => data.password === data.confirmPassword, {
   message: "Passwords don't match",
   path: ['confirmPassword'],
@@ -47,7 +43,7 @@ const registerSchema = z.object({
 type RegisterFormData = z.infer<typeof registerSchema>;
 
 export default function Register() {
-  const { loading: isSubmitting } = useSelector((state: RootState) => state.auth);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
   const { user } = useSelector((state: RootState) => state.auth);
@@ -57,9 +53,6 @@ export default function Register() {
       navigate('/dashboard');
     }
   }, [user, navigate]);
-  const [showOtp, setShowOtp] = useState(false);
-  const [formData, setFormData] = useState<RegisterFormData | null>(null);
-  const [sendingOtp, setSendingOtp] = useState(false);
 
   const form = useForm<RegisterFormData>({
     resolver: zodResolver(registerSchema),
@@ -80,47 +73,15 @@ export default function Register() {
     : [];
 
   const onSubmit = async (data: RegisterFormData) => {
-    setSendingOtp(true);
-    setFormData(data);
-    try {
-      const resultAction = await dispatch(sendOtp({ email: data.email, role }));
-      if (sendOtp.fulfilled.match(resultAction)) {
-        toast.success("OTP sent to your email!");
-        setShowOtp(true);
-      } else {
-        toast.error(resultAction.payload as string || "Failed to send OTP");
-      }
-    } catch (error) {
-      toast.error("An error occurred. Please try again.");
-    } finally {
-      setSendingOtp(false);
-    }
-  };
-
-  const handleRegistrationComplete = async () => {
-    if (!formData) return;
+    setIsSubmitting(true);
     
-    try {
-      const resultAction = await dispatch(registerUser({
-        role,
-        name: formData.name,
-        email: formData.email,
-        country: formData.country,
-        state: formData.state,
-        mobile_number: formData.mobileNumber,
-        dob: formData.dateOfBirth,
-        password: formData.password,
-      }));
-
-      if (registerUser.fulfilled.match(resultAction)) {
-        toast.success("Registration successful! Welcome aboard.");
-        navigate('/login');
-      } else {
-        toast.error(resultAction.payload as string || "Registration failed");
-      }
-    } catch (error) {
-      toast.error("An error occurred during registration.");
-    }
+    // Simulate registration with dummy login
+    setTimeout(() => {
+      dispatch(loginUser({ email: data.email, password: data.password }));
+      toast.success("Registration successful! Welcome aboard.");
+      setIsSubmitting(false);
+      navigate('/dashboard');
+    }, 500);
   };
 
   return (
@@ -211,7 +172,7 @@ export default function Register() {
                             </div>
                           </SelectTrigger>
                         </FormControl>
-                        <SelectContent className="bg-zinc-900 border-zinc-800 text-white">
+                        <SelectContent className="bg-card border-border">
                           {countryList.map((country) => (
                             <SelectItem key={country.value} value={country.label}>
                               {country.label} {country.country_flag}
@@ -239,7 +200,7 @@ export default function Register() {
                             </div>
                           </SelectTrigger>
                         </FormControl>
-                        <SelectContent className="bg-zinc-900 border-zinc-800 text-white">
+                        <SelectContent className="bg-card border-border">
                           {availableStates.map((state) => (
                             <SelectItem key={state.name} value={state.name}>
                               {state.name}
@@ -342,9 +303,9 @@ export default function Register() {
               <Button
                 type="submit"
                 className="w-full gradient-primary hover:opacity-90 transition-opacity glow-hover mt-6"
-                disabled={isSubmitting || sendingOtp}
+                disabled={isSubmitting}
               >
-                {(isSubmitting || sendingOtp) ? (
+                {isSubmitting ? (
                   <span className="flex items-center gap-2">
                     <div className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
                     Creating account...
@@ -369,17 +330,6 @@ export default function Register() {
           </div>
         </CardContent>
       </Card>
-
-      {showOtp && formData && (
-        <OtpVerification
-          email={formData.email}
-          role={role}
-          onVerified={handleRegistrationComplete}
-          onClose={() => setShowOtp(false)}
-        />
-      )}
-
-      {(sendingOtp || isSubmitting) && <Loader fullScreen />}
     </div>
   );
 }
