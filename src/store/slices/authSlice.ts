@@ -73,7 +73,7 @@ export const mintNft = createAsyncThunk(
   'auth/mintNft',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axiosInstance.post('/diversefy/mint-nft');
+      const response = await axiosInstance.post('/divershefy/mint-nft');
       return response.data;
     } catch (error: any) {
       return rejectWithValue(error.response?.data?.message || 'NFT minting failed');
@@ -85,7 +85,7 @@ export const fetchCertificates = createAsyncThunk(
   'auth/fetchCertificates',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axiosInstance.get('/diversefy/get-certificates');
+      const response = await axiosInstance.get('/divershefy/get-certificates');
       return response.data;
     } catch (error: any) {
       return rejectWithValue(error.response?.data?.message || 'Failed to fetch certificates');

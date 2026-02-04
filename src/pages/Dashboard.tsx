@@ -27,6 +27,7 @@ export default function Dashboard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAssessmentPopupOpen, setIsAssessmentPopupOpen] = useState(false);
   const [isMinting, setIsMinting] = useState(false);
+  const [isWebinarUser, setIsWebinarUser] = useState(true);
 
   useEffect(() => {
     if (!user) {
@@ -48,7 +49,7 @@ export default function Dashboard() {
         const backendCerts = resultAction.payload.certificates;
         const mappedCerts: Certificate[] = backendCerts.map((cert: any) => ({
           id: cert.id.toString(),
-          title: cert.assessment === "Diversefy" ? "Diversefy Professional Member" : cert.assessment,
+          title: cert.assessment === "Divershefy" ? "Divershefy Professional Member" : cert.assessment,
           issuer: "D5art",
           issueDate: cert.createdAt,
           credentialId: cert.token_id,
@@ -60,18 +61,19 @@ export default function Dashboard() {
         }));
         setCertificates(mappedCerts);
         
-        // Auto-mint logic: If no certificates exist, check eligibility
-        if (mappedCerts.length === 0) {
-          try {
-            const statusResponse = await axiosInstance.get('/psychometric/webinar/check-status');
-            const status = statusResponse.data.data;
-            // if (status.assessmentStatus === 'Eligible') {
+        // Check webinar status for auto-mint and registration messaging
+        try {
+          const statusResponse = await axiosInstance.get('/psychometric/webinar/check-status');
+          const status = statusResponse.data.data;
+          setIsWebinarUser(status.isWebinarUser);
+
+          // Auto-mint logic: If no certificates exist, check eligibility
+          if (mappedCerts.length === 0 && status.assessmentStatus === 'Eligible') {
               toast.success("Initializing your certificate minting...");
               handleMintCertificate();
-            // }
-          } catch (statusError) {
-            console.error("Auto-mint eligibility check failed:", statusError);
           }
+        } catch (statusError) {
+          console.error("Webinar status check failed:", statusError);
         }
       }
     } catch (error) {
@@ -271,24 +273,30 @@ export default function Dashboard() {
                   <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mb-4">
                     <Award className="w-8 h-8 text-muted-foreground" />
                   </div>
-                  <h3 className="font-medium text-lg">No certificates yet</h3>
-                   <p className="text-sm text-muted-foreground mt-1 mb-6 text-center">
-                    Your earned certificates will appear here. Get started by minting your professional certificate.
+                  <h3 className="font-medium text-lg">
+                    {isWebinarUser ? "No certificates yet" : "Webinar Registration Required"}
+                  </h3>
+                   <p className="text-sm text-muted-foreground mt-1 mb-6 text-center max-w-sm">
+                    {isWebinarUser 
+                      ? "Your earned certificates will appear here. Get started by minting your professional certificate."
+                      : "You are not registered on Diversyfy webinar, or kindly register your account using diversy email"}
                   </p>
-                  <Button 
-                    onClick={handleMintCertificate} 
-                    disabled={isMinting}
-                    className="gradient-primary hover:opacity-90 glow-hover min-w-[200px]"
-                  >
-                    {isMinting ? (
-                      <span className="flex items-center gap-2">
-                        <div className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
-                        Loading Your Certificates...
-                      </span>
-                    ) : (
-                      "Mint Your Certificate"
-                    )}
-                  </Button>
+                  {isWebinarUser && (
+                    <Button 
+                      onClick={handleMintCertificate} 
+                      disabled={isMinting}
+                      className="gradient-primary hover:opacity-90 glow-hover min-w-[200px]"
+                    >
+                      {isMinting ? (
+                        <span className="flex items-center gap-2">
+                          <div className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
+                          Loading Your Certificates...
+                        </span>
+                      ) : (
+                        "Mint Your Certificate"
+                      )}
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             )}

@@ -23,7 +23,7 @@ export default function PublicCertificate() {
   useEffect(() => {
     const fetchCertificate = async () => {
       try {
-        const response = await axios.get(`${API_URL}/diversefy/public-certificate/${key}`);
+        const response = await axios.get(`${API_URL}/divershefy/public-certificate/${key}`);
         if (response.data.success) {
           setCertificate(response.data.certificate);
         } else {
@@ -53,11 +53,19 @@ export default function PublicCertificate() {
     return (
       <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4">
         <Award className="w-16 h-16 text-muted-foreground mb-4" />
-        <h1 className="text-2xl font-bold mb-2">Certificate Not Found</h1>
-        <p className="text-muted-foreground mb-6">The certificate you are looking for does not exist or has been removed.</p>
-        <Button asChild>
-          <Link to="/">Go to Home</Link>
-        </Button>
+        <h1 className="text-2xl font-bold mb-2 text-center">Your certificate not generated</h1>
+        <p className="text-muted-foreground mb-8 text-center max-w-md">
+          The certificate you are looking for is not currently available in our system. 
+          Please sign in to your account to check your eligibility and mint your certificate.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <Button className="gradient-primary hover:opacity-90 glow-hover min-w-[140px]" asChild>
+            <Link to="/login">Sign In</Link>
+          </Button>
+          <Button variant="outline" className="min-w-[140px]" asChild>
+            <Link to="/">Go to Home</Link>
+          </Button>
+        </div>
       </div>
     );
   }
@@ -129,7 +137,7 @@ export default function PublicCertificate() {
             {/* Verification Info */}
             <div className="lg:col-span-2 space-y-6">
               <div>
-                <h2 className="text-3xl font-bold mb-2">{certificate.assessment === 'Diversefy' ? 'Professional Member Certificate' : certificate.assessment}</h2>
+                <h2 className="text-3xl font-bold mb-2">{certificate.assessment === 'Divershefy' ? 'Professional Member Certificate' : certificate.assessment}</h2>
                 <p className="text-muted-foreground">Certified Professional Verification</p>
               </div>
 
