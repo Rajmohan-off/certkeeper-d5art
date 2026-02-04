@@ -261,7 +261,7 @@ export default function Dashboard() {
               </div>
             </div>
             
-            {certificates.length > 0 ? (
+            {certificates.length > 0 && isWebinarUser ? (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {certificates.map((certificate) => (
                   <CertificateCard
