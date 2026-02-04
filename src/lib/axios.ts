@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_SERVER_URL + '/api/v1',
+  baseURL: import.meta.env.VITE_SERVER_URL ||'https://d5art.com' + '/api/v1',
   withCredentials: true,
 });
 
