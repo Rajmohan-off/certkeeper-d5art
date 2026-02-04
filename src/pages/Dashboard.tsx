@@ -123,7 +123,7 @@ export default function Dashboard() {
   };
 
   if (!user) return null;
-
+ 
   const initials = user.name
     .split(' ')
     .map((n) => n[0])
@@ -276,12 +276,12 @@ export default function Dashboard() {
                    <p className="text-sm text-muted-foreground mt-2 mb-8 text-center max-w-sm px-4">
                     You are not registered on Diversyfy webinar, or kindly register your account using diversy email.
                   </p>
-                  <Button 
+                  {/* <Button 
                     className="gradient-primary hover:opacity-90 glow-hover min-w-[200px]"
                     onClick={() => window.open('https://d5art.com', '_blank')}
                   >
                     Go to Registration
-                  </Button>
+                  </Button> */}
                 </CardContent>
               </Card>
             ) : (
