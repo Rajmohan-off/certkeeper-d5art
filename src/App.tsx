@@ -23,7 +23,7 @@ const queryClient = new QueryClient();
 
 const App = () => {
   const dispatch = useDispatch<AppDispatch>();
-
+ console.log = () => {};
   useEffect(() => {
     dispatch(verifyToken());
   }, [dispatch]);

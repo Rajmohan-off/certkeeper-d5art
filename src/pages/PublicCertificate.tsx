@@ -31,7 +31,7 @@ export default function PublicCertificate() {
         }
       } catch (error) {
         console.error("Error fetching certificate:", error);
-        toast.error("Failed to load certificate");
+        // toast.error("Failed to load certificate");
       } finally {
         setLoading(false);
       }
