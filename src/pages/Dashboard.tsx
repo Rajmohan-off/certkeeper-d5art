@@ -27,7 +27,7 @@ export default function Dashboard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAssessmentPopupOpen, setIsAssessmentPopupOpen] = useState(false);
   const [isMinting, setIsMinting] = useState(false);
-  const [isWebinarUser, setIsWebinarUser] = useState(true);
+  const [isWebinarUser, setIsWebinarUser] = useState<boolean | null>(null);
 
   useEffect(() => {
     if (!user) {
@@ -45,40 +45,49 @@ export default function Dashboard() {
   const loadCertificates = async () => {
     try {
       // 1. First check the webinar status to provide immediate UI context
-      let assessmentStatus = 'Pending';
+      let currentAssessmentStatus = 'Pending';
+      let isRegistered = false;
+
       try {
         const statusResponse = await axiosInstance.get('/psychometric/webinar/check-status');
         const status = statusResponse.data.data;
-        setIsWebinarUser(status.isWebinarUser);
-        assessmentStatus = status.assessmentStatus;
+        isRegistered = status.isWebinarUser;
+        setIsWebinarUser(isRegistered);
+        currentAssessmentStatus = status.assessmentStatus;
       } catch (statusError) {
         console.error("Webinar status check failed:", statusError);
+        setIsWebinarUser(false); // Assume not registered if check fails
       }
 
-      // 2. Load the certificates
-      const resultAction = await dispatch(fetchCertificates());
-      if (fetchCertificates.fulfilled.match(resultAction)) {
-        const backendCerts = resultAction.payload.certificates;
-        const mappedCerts: Certificate[] = backendCerts.map((cert: any) => ({
-          id: cert.id.toString(),
-          title: cert.assessment === "Divershefy" ? "Divershefy Professional Member" : cert.assessment,
-          issuer: "D5art",
-          issueDate: cert.createdAt,
-          credentialId: cert.token_id,
-          description: `Blockchain-verified certificate for ${cert.assessment}.`,
-          skills: ["Blockchain", cert.assessment],
-          verificationUrl: `${window.location.origin}/certificate/${cert.certificate_key || cert.token_id}`,
-          s3_url: cert.s3_url,
-          certificateKey: cert.certificate_key
-        }));
-        
-        setCertificates(mappedCerts);
-        
-        // 3. Auto-mint logic: If no certificates exist AND user is eligible, trigger minting
-        if (mappedCerts.length === 0 && assessmentStatus === 'Eligible') {
-          toast.success("Initializing your certificate minting...");
-          handleMintCertificate();
+      // 2. Only load certificates if user is part of the webinar
+      if (isRegistered) {
+        const resultAction = await dispatch(fetchCertificates());
+        if (fetchCertificates.fulfilled.match(resultAction)) {
+          const backendCerts = resultAction.payload.certificates;
+          const mappedCerts: Certificate[] = backendCerts.map((cert: any) => ({
+            id: cert.id.toString(),
+            title: cert.assessment === "Divershefy" ? "Divershefy Professional Member" : cert.assessment,
+            issuer: "D5art",
+            issueDate: cert.createdAt,
+            credentialId: cert.token_id,
+            description: `Blockchain-verified certificate for ${cert.assessment}.`,
+            skills: ["Blockchain", cert.assessment],
+            verificationUrl: `${window.location.origin}/certificate/${cert.certificate_key || cert.token_id}`,
+            s3_url: cert.s3_url,
+            certificateKey: cert.certificate_key
+          }));
+          
+          setCertificates(mappedCerts);
+          
+          // 3. Auto-mint logic: If no certificates exist AND user is eligible, trigger minting
+          if (mappedCerts.length === 0 && currentAssessmentStatus === 'Eligible') {
+            toast.success("Initializing your certificate minting...");
+            handleMintCertificate();
+          }
         }
+      } else {
+        // If not a webinar user, ensure certificates are empty
+        setCertificates([]);
       }
     } catch (error) {
       console.error("Failed to load certificates:", error);
@@ -252,57 +261,78 @@ export default function Dashboard() {
           
           {/* Certificates Grid */}
           <div className="lg:col-span-2">
-            <div className="flex items-center justify-between mb-6">
-              <div>
-                <h2 className="text-2xl font-bold">My Certificates</h2>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Click on a certificate to view details and share
-                </p>
+            {isWebinarUser === null ? (
+              <div className="flex flex-col items-center justify-center py-20 space-y-4">
+                <div className="w-12 h-12 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
+                <p className="text-muted-foreground animate-pulse">Verifying webinar status...</p>
               </div>
-            </div>
-            
-            {certificates.length > 0 && isWebinarUser ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {certificates.map((certificate) => (
-                  <CertificateCard
-                    key={certificate.id}
-                    certificate={certificate}
-                    onClick={() => handleCertificateClick(certificate)}
-                  />
-                ))}
-              </div>
-            ) : (
+            ) : isWebinarUser === false ? (
               <Card className="border-border/50 bg-card/60">
                 <CardContent className="flex flex-col items-center justify-center py-16">
-                  <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mb-4">
-                    <Award className="w-8 h-8 text-muted-foreground" />
+                  <div className="w-16 h-16 rounded-full bg-destructive/10 flex items-center justify-center mb-4">
+                    <Info className="w-8 h-8 text-destructive" />
                   </div>
-                  <h3 className="font-medium text-lg">
-                    {isWebinarUser ? "No certificates yet" : "Webinar Registration Required"}
-                  </h3>
-                   <p className="text-sm text-muted-foreground mt-1 mb-6 text-center max-w-sm">
-                    {isWebinarUser 
-                      ? "Your earned certificates will appear here. Get started by minting your professional certificate."
-                      : "You are not registered on Diversyfy webinar, or kindly register your account using diversy email"}
+                  <h3 className="font-medium text-lg text-center">Webinar Registration Required</h3>
+                   <p className="text-sm text-muted-foreground mt-2 mb-8 text-center max-w-sm px-4">
+                    You are not registered on Diversyfy webinar, or kindly register your account using diversy email.
                   </p>
-                  {isWebinarUser && (
-                    <Button 
-                      onClick={handleMintCertificate} 
-                      disabled={isMinting}
-                      className="gradient-primary hover:opacity-90 glow-hover min-w-[200px]"
-                    >
-                      {isMinting ? (
-                        <span className="flex items-center gap-2">
-                          <div className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
-                          Loading Your Certificates...
-                        </span>
-                      ) : (
-                        "Mint Your Certificate"
-                      )}
-                    </Button>
-                  )}
+                  <Button 
+                    className="gradient-primary hover:opacity-90 glow-hover min-w-[200px]"
+                    onClick={() => window.open('https://d5art.com', '_blank')}
+                  >
+                    Go to Registration
+                  </Button>
                 </CardContent>
               </Card>
+            ) : (
+              <>
+                <div className="flex items-center justify-between mb-6">
+                  <div>
+                    <h2 className="text-2xl font-bold">My Certificates</h2>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      Click on a certificate to view details and share
+                    </p>
+                  </div>
+                </div>
+                
+                {certificates.length > 0 ? (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {certificates.map((certificate) => (
+                      <CertificateCard
+                        key={certificate.id}
+                        certificate={certificate}
+                        onClick={() => handleCertificateClick(certificate)}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <Card className="border-border/50 bg-card/60">
+                    <CardContent className="flex flex-col items-center justify-center py-16">
+                      <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mb-4">
+                        <Award className="w-8 h-8 text-muted-foreground" />
+                      </div>
+                      <h3 className="font-medium text-lg">No certificates yet</h3>
+                       <p className="text-sm text-muted-foreground mt-1 mb-6 text-center max-w-sm px-4">
+                        Your earned certificates will appear here. Get started by minting your professional certificate.
+                      </p>
+                      <Button 
+                        onClick={handleMintCertificate} 
+                        disabled={isMinting}
+                        className="gradient-primary hover:opacity-90 glow-hover min-w-[200px]"
+                      >
+                        {isMinting ? (
+                          <span className="flex items-center gap-2">
+                            <div className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
+                            Loading Your Certificates...
+                          </span>
+                        ) : (
+                          "Mint Your Certificate"
+                        )}
+                      </Button>
+                    </CardContent>
+                  </Card>
+                )}
+              </>
             )}
           </div>
         </div>
