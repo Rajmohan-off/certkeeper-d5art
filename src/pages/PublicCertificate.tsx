@@ -12,7 +12,7 @@ import d5artLogo from '@/assets/d5art-logo.png';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import dLogo from '@/assets/d-logo.png';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://d5art.com/api/v1';
+const API_URL = import.meta.env.VITE_API_URL || 'https://d5art.com/api/v1';
 
 export default function PublicCertificate() {
   const { key } = useParams();
