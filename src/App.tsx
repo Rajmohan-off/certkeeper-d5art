@@ -14,6 +14,7 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import NftCertificate from "./pages/NftCertificate";
 import PublicCertificate from "./pages/PublicCertificate";
+import CertificateVerification from "./pages/CertificateVerification";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import NotFound from "./pages/NotFound";
@@ -42,6 +43,7 @@ const App = () => {
             <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
             <Route path="/nft/:id" element={<ProtectedRoute><NftCertificate /></ProtectedRoute>} />
             <Route path="/certificate/:key" element={<PublicCertificate />} />
+            <Route path="/verify/:key" element={<CertificateVerification />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password/:token" element={<ResetPassword />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

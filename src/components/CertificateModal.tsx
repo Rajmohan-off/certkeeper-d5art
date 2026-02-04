@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Award, Calendar, Copy, ExternalLink, CheckCircle, Share2, ShieldCheck } from 'lucide-react';
 import { format } from 'date-fns';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
 import {
   Tooltip,
@@ -23,8 +24,17 @@ interface CertificateModalProps {
 export default function CertificateModal({ certificate, isOpen, onClose }: CertificateModalProps) {
   const [copied, setCopied] = useState(false);
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   if (!certificate) return null;
+
+  const handleVerify = () => {
+    const certKey = certificate.certificateKey || certificate.token_id;
+    if (certKey) {
+      navigate(`/verify/${certKey}`);
+      onClose();
+    }
+  };
 
   const handleCopyLink = async () => {
     try {
@@ -189,7 +199,7 @@ export default function CertificateModal({ certificate, isOpen, onClose }: Certi
             </Button>
             <Button
               variant="outline"
-              onClick={() => window.open(certificate.verificationUrl, '_blank')}
+              onClick={handleVerify}
               className="border-border hover:border-primary hover:bg-primary/10"
             >
               <ExternalLink className="w-4 h-4 mr-2" />
