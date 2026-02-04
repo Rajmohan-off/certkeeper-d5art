@@ -9,10 +9,9 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Mail, Lock, ArrowRight } from 'lucide-react';
-import d5artLogo from '@/assets/d5art-logo.png';
+import ibaLogo from '@/assets/iba-logo.png';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import Loader from '@/components/Loader';
-import dLogo from '@/assets/d-logo.png';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -75,10 +74,8 @@ export default function Login() {
       
       <Card className="w-full max-w-md relative z-10 border-border/50 bg-card/80 backdrop-blur-xl">
         <CardHeader className="text-center space-y-4">
-           <div className="mx-auto flex items-center justify-center gap-3">
-            <img src={d5artLogo} alt="D Logo" className="h-14 w-auto" />
-            <span className="text-muted-foreground text-xl">×</span>
-            <img src={dLogo} alt="D5art Logo" className="h-14 w-auto" />
+          <div className="mx-auto">
+            <img src={ibaLogo} alt="IBA Logo" className="h-20 w-auto" />
           </div>
           <div>
             <CardTitle className="text-2xl font-bold">Welcome Back</CardTitle>

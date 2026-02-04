@@ -12,7 +12,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { User, Mail, Lock, Phone, MapPin, CalendarIcon, ArrowRight, Globe } from 'lucide-react';
-import dLogo from '@/assets/d-logo.png';
+import ibaLogo from '@/assets/iba-logo.png';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { toast } from 'react-hot-toast';
 import { format } from 'date-fns';
@@ -21,7 +21,6 @@ import countryList from '@/data/CountryCode.json';
 import stateList from '@/data/States.json';
 import OtpVerification from '@/components/OtpVerification';
 import Loader from '@/components/Loader';
-import d5artLogo from '@/assets/d5art-logo.png';
 // Roles for the application
 const role = "seeker";
 const passwordRegex =
@@ -136,10 +135,8 @@ export default function Register() {
       
       <Card className="w-full max-w-2xl relative z-10 border-border/50 bg-card/80 backdrop-blur-xl">
         <CardHeader className="text-center space-y-4">
-           <div className="mx-auto flex items-center justify-center gap-3">
-            <img src={d5artLogo} alt="D5art Logo" className="h-14 w-auto" />
-            <span className="text-muted-foreground text-xl">×</span>
-            <img src={dLogo} alt="D Logo" className="h-14 w-auto" />
+          <div className="mx-auto">
+            <img src={ibaLogo} alt="IBA Logo" className="h-20 w-auto" />
           </div>
           <div>
             <CardTitle className="text-2xl font-bold">Create Account</CardTitle>
