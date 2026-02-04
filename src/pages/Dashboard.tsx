@@ -44,6 +44,18 @@ export default function Dashboard() {
 
   const loadCertificates = async () => {
     try {
+      // 1. First check the webinar status to provide immediate UI context
+      let assessmentStatus = 'Pending';
+      try {
+        const statusResponse = await axiosInstance.get('/psychometric/webinar/check-status');
+        const status = statusResponse.data.data;
+        setIsWebinarUser(status.isWebinarUser);
+        assessmentStatus = status.assessmentStatus;
+      } catch (statusError) {
+        console.error("Webinar status check failed:", statusError);
+      }
+
+      // 2. Load the certificates
       const resultAction = await dispatch(fetchCertificates());
       if (fetchCertificates.fulfilled.match(resultAction)) {
         const backendCerts = resultAction.payload.certificates;
@@ -59,21 +71,13 @@ export default function Dashboard() {
           s3_url: cert.s3_url,
           certificateKey: cert.certificate_key
         }));
+        
         setCertificates(mappedCerts);
         
-        // Check webinar status for auto-mint and registration messaging
-        try {
-          const statusResponse = await axiosInstance.get('/psychometric/webinar/check-status');
-          const status = statusResponse.data.data;
-          setIsWebinarUser(status.isWebinarUser);
-
-          // Auto-mint logic: If no certificates exist, check eligibility
-          if (mappedCerts.length === 0 && status.assessmentStatus === 'Eligible') {
-              toast.success("Initializing your certificate minting...");
-              handleMintCertificate();
-          }
-        } catch (statusError) {
-          console.error("Webinar status check failed:", statusError);
+        // 3. Auto-mint logic: If no certificates exist AND user is eligible, trigger minting
+        if (mappedCerts.length === 0 && assessmentStatus === 'Eligible') {
+          toast.success("Initializing your certificate minting...");
+          handleMintCertificate();
         }
       }
     } catch (error) {
