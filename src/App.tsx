@@ -4,10 +4,6 @@ import { Toaster as HotToaster } from 'react-hot-toast';
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "./store";
-import { verifyToken } from "./store/slices/authSlice";
 import Index from "./pages/Index";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -23,12 +19,6 @@ import ProtectedRoute from "./components/ProtectedRoute";
 const queryClient = new QueryClient();
 
 const App = () => {
-  const dispatch = useDispatch<AppDispatch>();
- console.log = () => {};
-  useEffect(() => {
-    dispatch(verifyToken());
-  }, [dispatch]);
-
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
