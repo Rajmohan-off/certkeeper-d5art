@@ -87,13 +87,17 @@ export default function CertificateVerification() {
       <header className="border-b border-border/50 bg-card/50 backdrop-blur-xl sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            {/* D Logo - Primary and Prominent */}
-            <img src={dLogo} alt="D Logo" className="h-12 w-auto" />
+            {/* D Logo - Primary and Prominent with white background */}
+            <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-md">
+              <img src={dLogo} alt="D Logo" className="h-10 w-auto" />
+            </div>
             
-            {/* D5art - In collaboration with */}
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <span className="text-xs hidden sm:inline">in collaboration with</span>
-              <img src={d5artLogo} alt="D5art Logo" className="h-6 w-auto opacity-70" />
+            {/* In collaboration with D5art */}
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-muted-foreground hidden sm:inline">in collaboration with</span>
+              <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm">
+                <img src={d5artLogo} alt="D5art Logo" className="h-5 w-auto" />
+              </div>
             </div>
           </div>
           
@@ -153,7 +157,9 @@ export default function CertificateVerification() {
             <div className="space-y-6">
               {/* IBA Logo */}
               <div className="flex items-center gap-4 p-4 bg-card/50 border border-border/50 rounded-xl">
-                <img src={ibaLogo} alt="IBA Logo" className="h-16 w-auto" />
+                <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-md shrink-0">
+                  <img src={ibaLogo} alt="IBA Logo" className="h-14 w-auto" />
+                </div>
                 <div>
                   <h3 className="font-semibold">India Blockchain Alliance</h3>
                   <p className="text-sm text-muted-foreground">Issuing Authority</p>
