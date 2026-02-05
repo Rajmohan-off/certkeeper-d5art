@@ -9,7 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Mail, Lock, ArrowRight } from 'lucide-react';
-import ibaLogo from '@/assets/iba-logo.png';
+import ibaLogoNew from '@/assets/iba-logo-new.png';
 import { ThemeToggle } from '@/components/ThemeToggle';
 
 export default function Login() {
@@ -58,7 +58,7 @@ export default function Login() {
       <Card className="w-full max-w-md relative z-10 border-border/50 bg-card/80 backdrop-blur-xl">
         <CardHeader className="text-center space-y-4">
           <div className="mx-auto">
-            <img src={ibaLogo} alt="IBA Logo" className="h-20 w-auto" />
+            <img src={ibaLogoNew} alt="IBA Logo" className="h-24 w-auto" />
           </div>
           <div>
             <CardTitle className="text-2xl font-bold">Welcome Back</CardTitle>
