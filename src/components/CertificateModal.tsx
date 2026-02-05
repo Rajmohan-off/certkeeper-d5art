@@ -29,9 +29,9 @@ export default function CertificateModal({ certificate, isOpen, onClose }: Certi
   if (!certificate) return null;
 
   const handleVerify = () => {
-    const certKey = certificate.certificateKey || certificate.token_id;
+    const certKey = certificate.certificateKey || certificate.credentialId || certificate.id;
     if (certKey) {
-      navigate(`/verify/${certKey}`);
+      navigate(`/verify/${certKey}`, { state: { certificate } });
       onClose();
     }
   };
