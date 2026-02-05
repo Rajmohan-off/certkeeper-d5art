@@ -12,9 +12,8 @@ import CertificateModal from '@/components/CertificateModal';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { LogOut, Mail, Phone, MapPin, Calendar, Award, Compass, Zap, Info, ChevronRight } from 'lucide-react';
 import { format } from 'date-fns';
-import d5artLogo from '@/assets/d5art-logo.png';
-import ibaLogo from '@/assets/iba-logo.png';
-import dLogo from '@/assets/d-logo.png';
+import cdLogo from '@/assets/cd-logo.png';
+import ibaLogoNew from '@/assets/iba-logo-new.png';
 
 // Dummy certificates data
 const dummyCertificates: Certificate[] = [
@@ -72,14 +71,10 @@ export default function Dashboard() {
       <header className="border-b border-border/50 bg-card/50 backdrop-blur-xl sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
            <div className="flex items-center gap-4">
+            <img src={cdLogo} alt="CD Logo" className="h-12 w-auto" />
             <div className="flex items-center gap-2">
-              <img src={d5artLogo} alt="D Logo" className="h-10 w-auto" />
-              <span className="text-muted-foreground text-lg">×</span>
-              <img src={dLogo} alt="D5art Logo" className="h-10 w-auto" />
-            </div>
-            <div className="hidden sm:block border-l border-border/50 pl-4">
-              <h1 className="font-bold text-lg">D5art</h1>
-              <p className="text-xs text-muted-foreground">Certificate Vault</p>
+              <span className="text-sm text-muted-foreground">in collaboration with</span>
+              <span className="font-semibold text-foreground">D5art</span>
             </div>
           </div>
           
@@ -104,7 +99,7 @@ export default function Dashboard() {
             <Card className="border-border/50 bg-card/60 backdrop-blur-sm sticky top-24">
               <CardHeader className="text-center pb-2">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full border-4 border-primary/20 overflow-hidden bg-background flex items-center justify-center">
-                  <img src={ibaLogo} alt="IBA Logo" className="w-20 h-20 object-contain" />
+                  <img src={ibaLogoNew} alt="IBA Logo" className="w-20 h-20 object-contain" />
                 </div>
                 <CardTitle className="text-xl">{user.name}</CardTitle>
                 <p className="text-sm text-muted-foreground">Member since {user.createdAt ? format(new Date(user.createdAt), 'MMMM yyyy') : 'N/A'}</p>

@@ -12,7 +12,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { User, Mail, Lock, Phone, MapPin, CalendarIcon, ArrowRight, Globe } from 'lucide-react';
-import ibaLogo from '@/assets/iba-logo.png';
+import ibaLogoNew from '@/assets/iba-logo-new.png';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { toast } from 'react-hot-toast';
 import countryList from '@/data/CountryCode.json';
@@ -97,7 +97,7 @@ export default function Register() {
       <Card className="w-full max-w-2xl relative z-10 border-border/50 bg-card/80 backdrop-blur-xl">
         <CardHeader className="text-center space-y-4">
           <div className="mx-auto">
-            <img src={ibaLogo} alt="IBA Logo" className="h-20 w-auto" />
+            <img src={ibaLogoNew} alt="IBA Logo" className="h-24 w-auto" />
           </div>
           <div>
             <CardTitle className="text-2xl font-bold">Create Account</CardTitle>

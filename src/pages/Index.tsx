@@ -3,10 +3,8 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
 import { Button } from '@/components/ui/button';
 import { Award, CheckCircle, Share2, ArrowRight, Shield, User } from 'lucide-react';
-import d5artLogo from '@/assets/d5art-logo.png';
+import cdLogo from '@/assets/cd-logo.png';
 import { ThemeToggle } from '@/components/ThemeToggle';
-import dLogo from '@/assets/d-logo.png';
-
 const Index = () => {
   const { user } = useSelector((state: RootState) => state.auth);
 
@@ -21,14 +19,10 @@ const Index = () => {
       <header className="relative z-10 container mx-auto px-4 py-6">
         <nav className="flex items-center justify-between">
           <div className="flex items-center gap-4">
+            <img src={cdLogo} alt="CD Logo" className="h-12 w-auto" />
             <div className="flex items-center gap-2">
-              <img src={d5artLogo} alt="D Logo" className="h-10 w-auto" />
-              <span className="text-muted-foreground text-lg">×</span>
-              <img src={dLogo} alt="D5art Logo" className="h-10 w-auto" />
-            </div>
-            <div className="hidden sm:block border-l border-border/50 pl-4">
-              <h1 className="font-bold text-lg">D5art</h1>
-              <p className="text-xs text-muted-foreground">Certificate Vault</p>
+              <span className="text-sm text-muted-foreground">in collaboration with</span>
+              <span className="font-semibold text-foreground">D5art</span>
             </div>
           </div>
           

@@ -5,8 +5,7 @@
  import { Award, CheckCircle, Share2, Download, ExternalLink, ShieldCheck, Calendar, Copy } from 'lucide-react';
  import { useState } from 'react';
  import { useToast } from '@/hooks/use-toast';
- import dLogo from '@/assets/d-logo.png';
- import d5artLogo from '@/assets/d5art-logo.png';
+import cdLogo from '@/assets/cd-logo.png';
  import ibaLogo from '@/assets/iba-logo.png';
  import programDetails from '@/assets/program-details.jpg';
  import { ThemeToggle } from '@/components/ThemeToggle';
@@ -86,17 +85,10 @@
        <header className="border-b border-border/50 bg-card/50 backdrop-blur-xl sticky top-0 z-50">
          <div className="container mx-auto px-4 py-4 flex items-center justify-between">
            <div className="flex items-center gap-4">
-             {/* D Logo - Primary and Prominent with white background */}
-             <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-md">
-               <img src={dLogo} alt="D Logo" className="h-10 w-auto" />
-             </div>
-             
-             {/* In collaboration with D5art */}
+              <img src={cdLogo} alt="CD Logo" className="h-12 w-auto" />
              <div className="flex items-center gap-2">
-               <span className="text-xs text-muted-foreground hidden sm:inline">in collaboration with</span>
-               <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm">
-                 <img src={d5artLogo} alt="D5art Logo" className="h-5 w-auto" />
-               </div>
+                <span className="text-sm text-muted-foreground">in collaboration with</span>
+                <span className="font-semibold text-foreground">D5art</span>
              </div>
            </div>
            
@@ -156,9 +148,7 @@
              <div className="space-y-6">
                {/* IBA Logo */}
                <div className="flex items-center gap-4 p-4 bg-card/50 border border-border/50 rounded-xl">
-                 <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-md shrink-0">
-                   <img src={ibaLogo} alt="IBA Logo" className="h-14 w-auto" />
-                 </div>
+              <img src={ibaLogo} alt="IBA Logo" className="h-16 w-auto shrink-0" />
                  <div>
                    <h3 className="font-semibold">India Blockchain Alliance</h3>
                    <p className="text-sm text-muted-foreground">Issuing Authority</p>
@@ -258,9 +248,6 @@
              <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-4">
                Powered by D5art Protocol
              </p>
-             <div className="flex items-center justify-center gap-4 opacity-50">
-               <img src={d5artLogo} alt="D5art" className="h-6" />
-             </div>
            </div>
          </div>
        </main>
